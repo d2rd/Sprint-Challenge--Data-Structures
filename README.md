@@ -8,7 +8,7 @@
 1. What are the order of insertions/removals for the following data structures?
    - **Stack**
    - **Queue**
-2. What is the retreival time complexity for the following data structures?
+2. What is the retrieval time complexity for the following data structures?
    - **Linked List**
    - **Hash Table**
    - **Binary Search Trees**
