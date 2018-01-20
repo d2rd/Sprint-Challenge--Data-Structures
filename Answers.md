@@ -40,4 +40,6 @@
       - Arrays use an index to identify value locations.  Arrays require you to examine each element in order to find the desired item. On average, the amount of time it takes to find a value in an array is proportional to the number of items in your array. Therefore, the larger the array the more items that must be examined.  The more items, the longer it will take to find an item. If your target is in the middle of a huge array this will take a lot of time.   
 
       -  On the other hand a hash table uses a key to identify value locations (key|value pairs) the hashing function generates a location 'identifier' that references a particular bucket for each key.  Visualize a bookcase with multiple shelves.  The hash function creates a pointer that indicates the exact location of the target value.  The size of the hash is less important because each value has a specific location and the hash-table knows exactly where to go to retrieve the value.
+
+      - Once the key|value pair has been hashed there is an additional performance game because the hash-table knows the location of that key whereas the array has to 'plod' along starting at the beginning and iterating through each element until the target is located.
       

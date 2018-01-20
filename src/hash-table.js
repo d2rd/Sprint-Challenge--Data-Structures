@@ -1,18 +1,20 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable class-methods-use-this */
-const { LimitedArray, getIndexBelowMax } = require('./hash-table-helpers');
+const { LinkedNode, getIndexBelowMax } = require('./hash-table-helpers');
 
+// creates a hash-table class
 class HashTable {
   constructor(limit = 8) {
     this.limit = limit;
-    this.storage = new LimitedArray(this.limit);
+    this.storage = new LinkedNode(this.limit);
     // Do not modify anything inside of the constructor
   }
 
+// resizes size of storage if capacity exceeds 75 percent
   resize() {
     this.limit *= 2;
     const oldStorage = this.storage;
-    this.storage = new LimitedArray(this.limit);
+    this.storage = new LinkedNode(this.limit);
     oldStorage.each((bucket) => {
       if (!bucket) return;
       bucket.forEach((pair) => {
@@ -21,6 +23,7 @@ class HashTable {
     });
   }
 
+// Checks if storage capacity is full
   capacityIsFull() {
     let fullCells = 0;
     this.storage.each((bucket) => {

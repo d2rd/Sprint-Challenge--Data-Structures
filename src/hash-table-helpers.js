@@ -1,4 +1,14 @@
 // A special array class that can only store the number of items specified by the `limit` argument
+  // Attribution: adapted from https://gist.github.com/hamannjames/f06c25b585aeaaefc87ecfe60be4efa7 
+      class LinkedNode {
+        constructor(key, value) {
+          // You should not be directly accessing this array from your hash table methods
+          // Use the getter and setter methods included in this class to manipulate data in this class
+          this[key] = LinkedNode;
+          this.count = 0;
+        }
+      }
+
 class LimitedArray {
   constructor(limit) {
     // You should not be directly accessing this array from your hash table methods
@@ -6,6 +16,7 @@ class LimitedArray {
     this.storage = [];
     this.limit = limit;
   }
+}
 
   checkLimit(index) {
     if (typeof index !== 'number') throw new Error('The supplied index needs to be a number');
